@@ -22,7 +22,7 @@ public class RecommendationController : ControllerBase
         // Retrieve recommendations for the specified user
         var recommendations = _recommendationService.GetRecommendations(userId);
 
-        if (recommendations == null || !recommendations.Any())
+        if (!recommendations.Any())
         {
             return NotFound("No recommendations found for the user.");
         }

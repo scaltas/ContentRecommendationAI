@@ -1,9 +1,8 @@
-﻿namespace RecommendationEngineService.Models
+﻿namespace RecommendationEngineService.Models;
+
+public class Recommendation
 {
-    public class Recommendation
-    {
-        public int ContentId { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-    }
+    public string ContentId { get; set; }
+    public string Title { get; set; }
+    public double Score { get; set; }
 }

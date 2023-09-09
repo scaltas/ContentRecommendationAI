@@ -1,14 +1,15 @@
-﻿using RecommendationEngineService.Services;
+﻿using RecommendationEngineService.Data;
+using RecommendationEngineService.Services;
 
-namespace RecommendationEngineService
+namespace RecommendationEngineService;
+
+public static class ServiceCollectionExtensions
 {
-    public static class ServiceCollectionExtensions
+    public static IServiceCollection RegisterServices(this IServiceCollection services)
     {
-        public static IServiceCollection RegisterServices(this IServiceCollection services)
-        {
-            services.AddScoped<IRecommendationService, RecommendationService>();
+        services.AddScoped<IRecommendationService, RecommendationService>();
+        services.AddScoped<IDataRepository, InMemoryDataRepository>();
 
-            return services;
-        }
+        return services;
     }
 }
