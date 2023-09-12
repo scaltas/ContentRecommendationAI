@@ -2,6 +2,7 @@
 
 public class Interaction
 {
+    public int Id { get; set; }
     public string UserID { get; set; }
     public Content Content { get; set; }
     public InteractionType InteractionType { get; set; }

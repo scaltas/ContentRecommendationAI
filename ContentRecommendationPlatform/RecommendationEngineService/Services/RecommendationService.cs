@@ -41,7 +41,7 @@ public class RecommendationService : IRecommendationService
         // Take the top N recommendations
         var topRecommendations = recommendations
             .Where(r => ratedInteractions
-                .All(i => i.Content.ContentID != r.ContentId))
+                .All(i => i.Content.Id != r.ContentId))
             .Take(10)
             .ToList();
 
@@ -85,8 +85,9 @@ public class RecommendationService : IRecommendationService
         {
             var recommendation = new Recommendation
             {
-                ContentId = content.ContentID,
+                ContentId = content.Id,
                 Title = content.Title,
+                Genre = content.Genre,
                 Score = userGenreRating * content.AverageRating
             };
 
